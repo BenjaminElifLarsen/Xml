@@ -26,7 +26,7 @@
 		  <lastName>Olanten</lastName>
 		  <grade>4</grade>
 	  </student>
-	  <teacher>Bob Bob</teacher>
+	  <teacher>Pope Julius The Second</teacher>
 	  <class>Driving</class>
 	  <isTaught>true</isTaught>
   </lectures>
@@ -34,7 +34,7 @@
 	  <student>
 		  <firstName>Bob</firstName>
 		  <lastName>Thelast</lastName>
-		  <grade>-128</grade>
+		  <grade>-20</grade>
 	  </student>
 	  <student>
 		  <firstName>Zoe</firstName>

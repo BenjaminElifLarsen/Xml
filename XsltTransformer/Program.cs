@@ -15,12 +15,12 @@ namespace XsltTransformer
             try
             {
                 xml.Validation(xml.GetSchema("TechCollage.xsd"), "root.xml");
+                xml.Transformer("root.xml", "TechCollage.xslt", "outputTechCollage.html");
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
-            xml.Transformer("root.xml", "TechCollage.xslt", "outputTechCollage.html");
         }
     }
 

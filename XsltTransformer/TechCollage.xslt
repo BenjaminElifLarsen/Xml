@@ -3,8 +3,7 @@
 				
     xmlns="http://tempuri.org/TechCollage.xsd"
     xmlns:mstns="http://tempuri.org/TechCollage.xsd"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	exclude-result-prefixes="mstns xs"
+	exclude-result-prefixes="mstns"
 >
     <xsl:output method="html" indent="yes" encoding="utf-8"/>
 	<xsl:template match="/mstns:root">
@@ -13,9 +12,6 @@
 		<html>
 			<body>
 				<h1>Class Information</h1>
-				<p>
-					Amount: <xsl:value-of select="$lectureAmount"/>
-				</p>
 				<h2>Overall Inforamtion</h2>
 				<table>
 					<tr>
@@ -38,13 +34,16 @@
 						</tr>
 					</xsl:for-each>
 				</table>
-				<table>
+				<dev>
+					<h2>
+						Classes
+					</h2>
 					<xsl:for-each select="mstns:lectures">
-						<h2>
+						<h3>
 							<xsl:value-of select="mstns:class"/>
-						</h2>
-						<h4>Total Students</h4>
+						</h3>
 						<p>
+							<b>Total Students: </b>
 							<xsl:value-of select="count(mstns:student)"/>
 						</p>
 						<table>
@@ -69,7 +68,7 @@
 							</xsl:for-each>
 						</table>
 					</xsl:for-each>
-				</table>
+				</dev>
 				
 			</body>
 		</html>
