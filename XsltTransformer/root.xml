@@ -45,4 +45,19 @@
 	  <class>Diving</class>
 	  <isTaught>false</isTaught>
   </lectures>
+  <lectures>
+	  <student>
+		  <firstName>Jack</firstName>
+		  <lastName>Olanten</lastName>
+		  <grade>-03</grade>
+	  </student>
+	  <student>
+		  <firstName>Zoe</firstName>
+		  <lastName>Sin</lastName>
+		  <grade>12</grade>
+	  </student>
+	  <teacher>Ryan Lastly</teacher>
+	  <class>Regex</class>
+	  <isTaught>true</isTaught>
+  </lectures>
 </root>

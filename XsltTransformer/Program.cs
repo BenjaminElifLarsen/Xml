@@ -8,14 +8,12 @@ namespace XsltTransformer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Transform");
             IXmlService xml = new XmlService();
-            xml.Transformer("Book.xml", "XSLT.xslt", "output.xml");
-            Console.WriteLine("Validation");
             try
             {
-                xml.Validation(xml.GetSchema("TechCollage.xsd"), "root.xml");
-                xml.Transformer("root.xml", "TechCollage.xslt", "outputTechCollage.html");
+                string path = Console.ReadLine() + ".xml";
+                xml.Validation(xml.GetSchema("TechCollage.xsd"), path);
+                xml.Transformer(path, "TechCollage.xslt", "outputTechCollage.html");
             }
             catch (Exception e)
             {

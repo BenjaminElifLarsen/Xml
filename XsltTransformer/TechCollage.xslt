@@ -43,6 +43,10 @@
 							<xsl:value-of select="mstns:class"/>
 						</h3>
 						<p>
+							<b>Teacher: </b>
+							<xsl:value-of select="mstns:teacher"/>
+						</p>
+						<p>
 							<b>Total Students: </b>
 							<xsl:value-of select="count(mstns:student)"/>
 						</p>
