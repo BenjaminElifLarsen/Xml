@@ -1,5 +1,6 @@
 ﻿using System;
-using XML;
+using XML.Contracts;
+using XML.Services;
 
 namespace XsltTransformer
 {
@@ -8,17 +9,18 @@ namespace XsltTransformer
         static void Main(string[] args)
         {
             Console.WriteLine("Transform");
-            Xslt.Transformer("Book.xml", "XSLT.xslt", "output.xml");
+            IXmlService xml = new XmlService();
+            xml.Transformer("Book.xml", "XSLT.xslt", "output.xml");
             Console.WriteLine("Validation");
             try
             {
-                Xslt.Validation(Xslt.GetSchema("TechCollage.xsd"), "root.xml");
+                xml.Validation(xml.GetSchema("TechCollage.xsd"), "root.xml");
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
-            Xslt.Transformer("root.xml", "TechCollage.xslt", "outputTechCollage.html");
+            xml.Transformer("root.xml", "TechCollage.xslt", "outputTechCollage.html");
         }
     }
 

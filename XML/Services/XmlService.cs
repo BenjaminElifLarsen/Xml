@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Xsl;
+using XML.Contracts;
 
-namespace XML
+namespace XML.Services
 {
-    public class Xslt
+    public class XmlService : IXmlService
     {
-        public static void Transformer(string xmlSource, string xsltSource, string outputFile)
+        public void Transformer(string xmlSource, string xsltSource, string outputFile)
         {
             XslCompiledTransform xslt = new(true);
             xslt.Load(xsltSource);
@@ -26,7 +27,7 @@ namespace XML
         /// <param name="xsd"></param>
         /// <param name="xmlSource"></param>
         /// <exception cref="XmlSchemaValidationException"></exception>
-        public static void Validation(XmlSchema xsd, string xmlSource)
+        public void Validation(XmlSchema xsd, string xmlSource)
         {
             XmlReaderSettings settings = new();
             settings.Schemas.Add(xsd);
@@ -37,7 +38,7 @@ namespace XML
             xmlDocument.Load(reader);
         }
 
-        public static XmlSchema GetSchema(string xsdSource)
+        public XmlSchema GetSchema(string xsdSource)
         {
             XmlTextReader reader = new(xsdSource);
             return XmlSchema.Read(reader, ValidationEventHandler);
