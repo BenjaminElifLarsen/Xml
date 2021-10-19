@@ -10,7 +10,15 @@ namespace XsltTransformer
             Console.WriteLine("Transform");
             Xslt.Transformer("Book.xml", "XSLT.xslt", "output.xml");
             Console.WriteLine("Validation");
-            Xslt.Validation(Xslt.GetSchema("TechCollage.xsd"), "root.xml");
+            try
+            {
+                Xslt.Validation(Xslt.GetSchema("TechCollage.xsd"), "root.xml");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            Xslt.Transformer("root.xml", "TechCollage.xslt", "outputTechCollage.xml");
         }
     }
 

@@ -20,6 +20,12 @@ namespace XML
             xslt.Transform(xmlSource, null, outPutStream);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="xsd"></param>
+        /// <param name="xmlSource"></param>
+        /// <exception cref="XmlSchemaValidationException"></exception>
         public static void Validation(XmlSchema xsd, string xmlSource)
         {
             XmlReaderSettings settings = new();
@@ -29,8 +35,6 @@ namespace XML
             XmlReader reader = XmlReader.Create(xmlSource, settings);
             XmlDocument xmlDocument = new();
             xmlDocument.Load(reader);
-            ValidationEventHandler eventHandler = new(ValidationEventHandler);
-            xmlDocument.Validate(eventHandler);
         }
 
         public static XmlSchema GetSchema(string xsdSource)

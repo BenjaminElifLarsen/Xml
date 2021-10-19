@@ -40,7 +40,7 @@
 							<xs:element name="teacher">
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
-										<xs:pattern value="[A-Z]([a-z])*"></xs:pattern>
+										<xs:pattern value="[A-Z]([a-z])* [A-Z]([a-z])*"></xs:pattern>
 										<xs:maxLength value="20"></xs:maxLength>
 										<xs:minLength value="2"></xs:minLength>
 									</xs:restriction>

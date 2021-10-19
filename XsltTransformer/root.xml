@@ -16,7 +16,7 @@
 		  <lastName>Sin</lastName>
 		  <grade>12</grade>
 	  </student>
-	  <teacher>Ib</teacher>
+	  <teacher>Ib Te</teacher>
 	  <class>Toaster Repair</class>
 	  <isTaught>true</isTaught>
   </lectures>
@@ -26,7 +26,7 @@
 		  <lastName>Olanten</lastName>
 		  <grade>4</grade>
 	  </student>
-	  <teacher>Bob</teacher>
+	  <teacher>Bob Bob</teacher>
 	  <class>Driving</class>
 	  <isTaught>true</isTaught>
   </lectures>
@@ -41,7 +41,7 @@
 		  <lastName>Sin</lastName>
 		  <grade>12</grade>
 	  </student>
-	  <teacher>Ib</teacher>
+	  <teacher>Ib Te</teacher>
 	  <class>Diving</class>
 	  <isTaught>false</isTaught>
   </lectures>
