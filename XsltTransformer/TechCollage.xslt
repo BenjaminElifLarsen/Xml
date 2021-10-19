@@ -1,15 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl"
+				
+    xmlns="http://tempuri.org/TechCollage.xsd"
+    xmlns:mstns="http://tempuri.org/TechCollage.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	exclude-result-prefixes="mstns xs"
 >
-    <xsl:output method="xml" indent="yes" encoding="utf-8"/>
-	<xsl:template match="/">
-		<xsl:variable name="lectureAmount" select="count(/lectures)"></xsl:variable>
+    <xsl:output method="html" indent="yes" encoding="utf-8"/>
+	<xsl:template match="/mstns:root">
+		<xsl:variable name="lectureAmount" select="count(mstns:lectures)"></xsl:variable>
 
 		<html>
 			<body>
 				<p>
-					test: <xsl:value-of select="$lectureAmount"/>
+					Amount: <xsl:value-of select="$lectureAmount"/>
 				</p>
 				<table>
 					<tr>
@@ -17,12 +21,16 @@
 						<th>Class</th>
 						<th>Taught</th>
 					</tr>
-					<xsl:for-each select="root/lectures">
+					<xsl:for-each select="mstns:lectures">
 						<tr>
 							<td>
-								<xsl:value-of select="teacher"/>
-								<xsl:value-of select="class"/>
-								<xsl:value-of select="isTaught"/>
+								<xsl:value-of select="mstns:teacher"/>
+							</td>
+							<td>
+								<xsl:value-of select="mstns:class"/>
+							</td>
+							<td>
+								<xsl:value-of select="mstns:isTaught"/>
 							</td>
 						</tr>
 					</xsl:for-each>

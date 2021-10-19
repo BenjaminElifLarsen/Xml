@@ -18,7 +18,7 @@ namespace XsltTransformer
             {
                 Console.WriteLine(e.Message);
             }
-            Xslt.Transformer("root.xml", "TechCollage.xslt", "outputTechCollage.xml");
+            Xslt.Transformer("root.xml", "TechCollage.xslt", "outputTechCollage.html");
         }
     }
 
