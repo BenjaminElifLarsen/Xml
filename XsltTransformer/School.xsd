@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TechCollage"
+    targetNamespace="http://tempuri.org/TechCollage.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/TechCollage.xsd"
+    xmlns:mstns="http://tempuri.org/TechCollage.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+	<xs:element name="root">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="School" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="school" type="xs:string"></xs:element>
+							<xs:element name="lectures" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="student" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="firstName">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="[A-Z]([a-z])*"></xs:pattern>
+																<xs:maxLength value="20"></xs:maxLength>
+																<xs:minLength value="2"></xs:minLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="lastName">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="[A-Z]([a-z])*"></xs:pattern>
+																<xs:maxLength value="20"></xs:maxLength>
+																<xs:minLength value="2"></xs:minLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="grade" >
+														<xs:simpleType>
+															<xs:restriction base="xs:byte">
+																<xs:minInclusive value="-20"></xs:minInclusive>
+																<xs:maxInclusive value="12"></xs:maxInclusive>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="teacher">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:pattern value="^([A-Z]{1}[a-z]{1,10}([\s][A-Z]{1}[a-z]{1,10}){1,3})$"></xs:pattern>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="class">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="100"></xs:maxLength>
+													<xs:minLength value="3"></xs:minLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="isTaught" type="xs:boolean" default="true"></xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	
+</xs:schema>
