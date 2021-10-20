@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<education xmlns="http://tempuri.org/Education.xsd">
+  <School>
+    <school>Techcollege</school>
+    <lectures>
+      <room>A1</room>
+      <student>
+        <firstName>Bob</firstName>
+        <lastName>Sen</lastName>
+        <grade>-20</grade>
+      </student>
+      <student>
+        <firstName>Terra</firstName>
+        <lastName>Former</lastName>
+        <grade>12</grade>
+      </student>
+      <student>
+        <firstName>Ib</firstName>
+        <lastName>Mouse</lastName>
+        <grade>-19</grade>
+      </student>
+      <teacher>Pope Julius The Second</teacher>
+      <class>Figthing</class>
+      <isTaught>true</isTaught>
+    </lectures>
+    <lectures>
+      <room>B3</room>
+      <student>
+        <firstName>Nia</firstName>
+        <lastName>Carsten</lastName>
+        <grade>11</grade>
+      </student>
+      <teacher>Ege Kilde</teacher>
+      <class>Drinking</class>
+      <isTaught>false</isTaught>
+    </lectures>
+  </School>
+  <School>
+    <school>Aalborg University</school>
+    <lectures>
+      <room>B102</room>
+      <student>
+        <firstName>Firsty</firstName>
+        <lastName>Lastly</lastName>
+        <grade>8</grade>
+      </student>
+      <student>
+        <firstName>George</firstName>
+        <lastName>Martin</lastName>
+        <grade>-15</grade>
+      </student>
+      <student>
+        <firstName>Fjodor</firstName>
+        <lastName>Dostojevskij</lastName>
+        <grade>7</grade>
+      </student>
+      <teacher>Frank Herbert</teacher>
+      <class>Writing</class>
+      <isTaught>true</isTaught>
+    </lectures>
+  </School>
+</education>
