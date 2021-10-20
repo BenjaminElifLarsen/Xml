@@ -12,11 +12,12 @@ namespace XsltTransformer
             try
             {
                 string path = "XML/"+"school"/*Console.ReadLine()*/ + ".xml";
-                xml.Validation(xml.GetSchema("TechCollage.xsd"), "school"+ ".xml");
-                xml.Transformer("school" + ".xml", "TechCollage.xslt", "outputTechCollage.html");
-                xml.Validation(xml.GetSchema("XSD/School.xsd"), path); //does not validate namespace it seems
+                xml.Validation(xml.GetSchema("TechCollage.xsd"), "root"+ ".xml");
+                xml.Transformer("root" + ".xml", "TechCollage.xslt", "outputTechCollage.html");
+                xml.Validation(xml.GetSchema("XSD/Education.xsd"), path); //does not validate namespace it seems
                 var data = xml.Load(path);
-                xml.Validation(xml.GetSchema("XSD/School.xsd"), "XML/" + "new" + ".xml");
+                xml.Validation(xml.GetSchema("XSD/Education.xsd"), "XML/" + "new" + ".xml");
+                xml.Transformer("XML/" + "school" + ".xml", "../../../../XML/XSLT/SchoolDisplay.xslt", "table2.html");
                 var data2 = xml.Load("XML/" + "new" + ".xml");
                 data.School[0].lectures[0].teacher = "Bob Ross";
                 xml.AddToXml(data2, data, "XML/" + "schoolNew" + ".xml");
