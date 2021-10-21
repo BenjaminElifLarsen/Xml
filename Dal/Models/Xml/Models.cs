@@ -7,28 +7,29 @@ using System.Threading.Tasks;
 namespace Dal.Models.Xml
 {
 
+
     // NOTE: Generated code may require at least .NET Framework 4.5 or .NET Core/Standard 2.0.
     /// <remarks/>
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://tempuri.org/Education.xsd")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://tempuri.org/Education.xsd", IsNullable = false)]
-    public partial class education
+    public partial class Education
     {
 
-        private educationSchool[] schoolField;
+        private EducationSchools[] schoolsField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("School")]
-        public educationSchool[] School
+        [System.Xml.Serialization.XmlElementAttribute("Schools")]
+        public EducationSchools[] Schools
         {
             get
             {
-                return this.schoolField;
+                return this.schoolsField;
             }
             set
             {
-                this.schoolField = value;
+                this.schoolsField = value;
             }
         }
     }
@@ -37,29 +38,76 @@ namespace Dal.Models.Xml
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://tempuri.org/Education.xsd")]
-    public partial class educationSchool
+    public partial class EducationSchools
     {
 
-        private string schoolField;
+        private string nameField;
 
-        private educationSchoolLectures[] lecturesField;
+        private int idField;
+
+        private EducationSchoolsTeachers[] teachersField;
+
+        private EducationSchoolsTeams[] teamsField;
+
+        private EducationSchoolsLectures[] lecturesField;
 
         /// <remarks/>
-        public string school
+        public string Name
         {
             get
             {
-                return this.schoolField;
+                return this.nameField;
             }
             set
             {
-                this.schoolField = value;
+                this.nameField = value;
             }
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("lectures")]
-        public educationSchoolLectures[] lectures
+        public int Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Teachers")]
+        public EducationSchoolsTeachers[] Teachers
+        {
+            get
+            {
+                return this.teachersField;
+            }
+            set
+            {
+                this.teachersField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Teams")]
+        public EducationSchoolsTeams[] Teams
+        {
+            get
+            {
+                return this.teamsField;
+            }
+            set
+            {
+                this.teamsField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Lectures")]
+        public EducationSchoolsLectures[] Lectures
         {
             get
             {
@@ -76,35 +124,98 @@ namespace Dal.Models.Xml
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://tempuri.org/Education.xsd")]
-    public partial class educationSchoolLectures
+    public partial class EducationSchoolsTeachers
     {
 
-        private string roomField;
+        private byte idField;
 
-        private educationSchoolLecturesStudent[] studentField;
-
-        private string teacherField;
-
-        private string classField;
-
-        private bool isTaughtField;
+        private string nameField;
 
         /// <remarks/>
-        public string room
+        public byte Id
         {
             get
             {
-                return this.roomField;
+                return this.idField;
             }
             set
             {
-                this.roomField = value;
+                this.idField = value;
             }
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("student")]
-        public educationSchoolLecturesStudent[] student
+        public string Name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://tempuri.org/Education.xsd")]
+    public partial class EducationSchoolsTeams
+    {
+
+        private byte idField;
+
+        private string nameField;
+
+        private EducationSchoolsTeamsLectures[] lecturesField;
+
+        private EducationSchoolsTeamsStudent[] studentField;
+
+        /// <remarks/>
+        public byte Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+
+        /// <remarks/>
+        public string Name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Lectures")]
+        public EducationSchoolsTeamsLectures[] Lectures
+        {
+            get
+            {
+                return this.lecturesField;
+            }
+            set
+            {
+                this.lecturesField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Student")]
+        public EducationSchoolsTeamsStudent[] Student
         {
             get
             {
@@ -115,43 +226,27 @@ namespace Dal.Models.Xml
                 this.studentField = value;
             }
         }
+    }
+
+    /// <remarks/>
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://tempuri.org/Education.xsd")]
+    public partial class EducationSchoolsTeamsLectures
+    {
+
+        private int idField;
 
         /// <remarks/>
-        public string teacher
+        public int Id
         {
             get
             {
-                return this.teacherField;
+                return this.idField;
             }
             set
             {
-                this.teacherField = value;
-            }
-        }
-
-        /// <remarks/>
-        public string @class
-        {
-            get
-            {
-                return this.classField;
-            }
-            set
-            {
-                this.classField = value;
-            }
-        }
-
-        /// <remarks/>
-        public bool isTaught
-        {
-            get
-            {
-                return this.isTaughtField;
-            }
-            set
-            {
-                this.isTaughtField = value;
+                this.idField = value;
             }
         }
     }
@@ -160,8 +255,10 @@ namespace Dal.Models.Xml
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://tempuri.org/Education.xsd")]
-    public partial class educationSchoolLecturesStudent
+    public partial class EducationSchoolsTeamsStudent
     {
+
+        private string idField;
 
         private string firstNameField;
 
@@ -170,7 +267,20 @@ namespace Dal.Models.Xml
         private sbyte gradeField;
 
         /// <remarks/>
-        public string firstName
+        public string Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+
+        /// <remarks/>
+        public string FirstName
         {
             get
             {
@@ -183,7 +293,7 @@ namespace Dal.Models.Xml
         }
 
         /// <remarks/>
-        public string lastName
+        public string LastName
         {
             get
             {
@@ -196,7 +306,7 @@ namespace Dal.Models.Xml
         }
 
         /// <remarks/>
-        public sbyte grade
+        public sbyte Grade
         {
             get
             {
@@ -208,6 +318,93 @@ namespace Dal.Models.Xml
             }
         }
     }
+
+    /// <remarks/>
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://tempuri.org/Education.xsd")]
+    public partial class EducationSchoolsLectures
+    {
+
+        private int idField;
+
+        private string roomField;
+
+        private byte teacherIdField;
+
+        private string nameField;
+
+        private bool isTaughtField;
+
+        /// <remarks/>
+        public int Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+
+        /// <remarks/>
+        public string Room
+        {
+            get
+            {
+                return this.roomField;
+            }
+            set
+            {
+                this.roomField = value;
+            }
+        }
+
+        /// <remarks/>
+        public byte TeacherId
+        {
+            get
+            {
+                return this.teacherIdField;
+            }
+            set
+            {
+                this.teacherIdField = value;
+            }
+        }
+
+        /// <remarks/>
+        public string Name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+            }
+        }
+
+        /// <remarks/>
+        public bool IsTaught
+        {
+            get
+            {
+                return this.isTaughtField;
+            }
+            set
+            {
+                this.isTaughtField = value;
+            }
+        }
+    }
+
+
+
+
 
 
 }

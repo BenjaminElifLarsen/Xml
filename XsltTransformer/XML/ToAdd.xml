@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Education xmlns="http://tempuri.org/Education.xsd">
+	<Schools>
+		<Name>Tech College</Name>
+		<Id>1</Id>
+		<Teachers>
+			<Id>1</Id>
+			<Name>Pope Benedict The Third</Name>
+		</Teachers>
+		<Teachers>
+			<Id>3</Id>
+			<Name>Karl Karlsen</Name>
+		</Teachers>
+		<Teams>
+			<Id>1</Id>
+			<Name>TeamGo</Name>
+			<Lectures>
+				<Id>1</Id>
+			</Lectures>
+			<Lectures>
+				<Id>-2147483647</Id>
+			</Lectures>
+			<Student>
+				<Id>654321-4321</Id>
+				<FirstName>Nia</FirstName>
+				<LastName>Sen</LastName>
+				<Grade>11</Grade>
+			</Student>
+			<Student>
+				<Id>123456-2312</Id>
+				<FirstName>Terra</FirstName>
+				<LastName>Former</LastName>
+				<Grade>12</Grade>
+			</Student>
+		</Teams>
+		<Lectures>
+			<Id>1</Id>
+			<Room>N12</Room>
+			<TeacherId>3</TeacherId>
+			<Name>Driving</Name>
+			<IsTaught>true</IsTaught>
+		</Lectures>
+		<Lectures>
+			<Id>-2147483647</Id>
+			<Room>Room2</Room>
+			<TeacherId>1</TeacherId>
+			<Name>Fighting</Name>
+			<IsTaught>true</IsTaught>
+		</Lectures>
+	</Schools>
+	<Schools>
+		<Name>Aalborg University</Name>
+		<Id>-2147483647</Id>
+		<Teachers>
+			<Id>1</Id>
+			<Name>Frank Herbert</Name>
+		</Teachers>
+		<Teams>
+			<Id>2</Id>
+			<Name>Name5</Name>
+			<Lectures>
+				<Id>1</Id>
+			</Lectures>
+			<Student>
+				<Id>123456-1232</Id>
+				<FirstName>Fri</FirstName>
+				<LastName>La</LastName>
+				<Grade>-14</Grade>
+			</Student>
+			<Student>
+				<Id>123521-4231</Id>
+				<FirstName>Fri</FirstName>
+				<LastName>La</LastName>
+				<Grade>6</Grade>
+			</Student>
+			<Student>
+				<Id>123142-9807</Id>
+				<FirstName>Fri</FirstName>
+				<LastName>La</LastName>
+				<Grade>-13</Grade>
+			</Student>
+		</Teams>
+		<Lectures>
+			<Id>1</Id>
+			<Room>Room4</Room>
+			<TeacherId>1</TeacherId>
+			<Name>Name4</Name>
+			<IsTaught>true</IsTaught>
+		</Lectures>
+	</Schools>
+	<Schools>
+		<Name>New School</Name>
+		<Id>3</Id>
+		<Teachers>
+			<Id>111</Id>
+			<Name>Bob Bobsen</Name>
+		</Teachers>
+		<Teams>
+			<Id>2</Id>
+			<Name>Best Team!!!</Name>
+			<Lectures>
+				<Id>133</Id>
+			</Lectures>
+			<Student>
+				<Id>112233-5564</Id>
+				<FirstName>Bente</FirstName>
+				<LastName>Carsten</LastName>
+				<Grade>12</Grade>
+			</Student>
+		</Teams>
+		<Lectures>
+			<Id>133</Id>
+			<Room>B12312</Room>
+			<TeacherId>111</TeacherId>
+			<Name>Toaster Repair</Name>
+			<IsTaught>1</IsTaught>
+		</Lectures>
+	</Schools>
+</Education>

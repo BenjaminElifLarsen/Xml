@@ -13,8 +13,8 @@ namespace XML.Contracts
         void Transformer(string xmlSource, string xsltSource, string outputFile);
         void Validation(XmlSchema xsd, string xmlSource);
         XmlSchema GetSchema(string xsdSource);
-        public void Save(education education, string path);
-        public education Load(string sourceFilePath);
-        public void AddToXml(education toAdd, education addToo, string saveFilePath);
+        public void Save(Education education, string path);
+        public Education Load(string sourceFilePath);
+        public void UpdateXML(Education toAdd, Education addToo, string saveFilePath);
     }
 }
