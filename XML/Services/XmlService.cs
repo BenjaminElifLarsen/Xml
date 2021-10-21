@@ -87,6 +87,7 @@ namespace XML.Services
 
         public void UpdateXML(Education toAdd, Education addToo, string saveFilePath)
         {
+            // Delete schools.
             foreach(var delete in addToo.Schools.Where(s => !toAdd.Schools.Any(ss => s.Id == ss.Id)))
             {
                 var list = addToo.Schools.ToList();
@@ -94,6 +95,7 @@ namespace XML.Services
                 addToo.Schools = list.ToArray();
             }
 
+            // Delete data in specific schools.
             foreach(var school in toAdd.Schools)
             {
                 if(addToo.Schools.Any(s => s.Id == school.Id))
@@ -137,6 +139,7 @@ namespace XML.Services
                 }
             }
 
+            // Add data. 
             foreach (var school in toAdd.Schools)
             {
                 if (addToo.Schools.Any(s => s.Id == school.Id))

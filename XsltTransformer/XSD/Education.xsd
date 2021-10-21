@@ -82,6 +82,15 @@
 										</xs:element>
 									</xs:sequence>
 								</xs:complexType>
+								<xs:unique name="uniqueId">
+									<xs:annotation>
+										<xs:documentation>
+											The Id of each student must be unique.
+										</xs:documentation>
+									</xs:annotation>
+									<xs:selector xpath="mstns:Student/mstns:Id"></xs:selector>
+									<xs:field xpath="."></xs:field>
+								</xs:unique>
 							</xs:element>
 							<xs:element name="Lectures" maxOccurs="unbounded">
 								<xs:complexType>
@@ -106,5 +115,14 @@
 				</xs:element>
 			</xs:sequence>
 		</xs:complexType>
+		<xs:unique name="SchoolId">
+			<xs:annotation>
+				<xs:documentation>
+					The Id of each school must be unique.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:selector xpath="mstns:Schools/mstns:Id"></xs:selector>
+			<xs:field xpath="."></xs:field>
+		</xs:unique>
 	</xs:element>
 </xs:schema>

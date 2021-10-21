@@ -12,15 +12,17 @@ namespace XsltTransformer
             try
             {
                 string path = "XML/"+"Newest"/*Console.ReadLine()*/ + ".xml";
-                xml.Validation(xml.GetSchema("XSD/Education.xsd"), path); //does not validate namespace it seems
+
                 var data = xml.Load(path);
-                xml.Validation(xml.GetSchema("XSD/Education.xsd"), "XML/" + "Newest" + ".xml");
-                xml.Transformer(path, "../../../../XML/XSLT/SchoolDisplay.xslt", "table2.html");
+                xml.Validation(xml.GetSchema("XSD/Education.xsd"), path); //does not validate namespace it seems
+                xml.Transformer(path, "../../../../XML/XSLT/SchoolDisplay.xslt", "XmlOld.html");
+
                 var data2 = xml.Load("XML/" + "ToAdd" + ".xml");
                 xml.Validation(xml.GetSchema("XSD/Education.xsd"), "XML/" + "ToAdd" + ".xml");
+
                 xml.UpdateXML(data2, data, "XML/" + "schoolNew" + ".xml");
                 xml.Save(data, "XML/" + "schoolNew" + ".xml");
-                xml.Transformer("XML/" + "schoolNew" + ".xml", "../../../../XML/XSLT/SchoolDisplay.xslt", "table.html");
+                xml.Transformer("XML/" + "schoolNew" + ".xml", "../../../../XML/XSLT/SchoolDisplay.xslt", "XmlNew.html");
             }
             catch (Exception e)
             {
