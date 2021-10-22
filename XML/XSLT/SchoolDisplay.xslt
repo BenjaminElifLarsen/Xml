@@ -15,6 +15,10 @@
 						<h1>
 							<xsl:value-of select="mstns:Name"/>
 						</h1>
+						<p>
+							<b>Id: </b>
+							<xsl:value-of select="mstns:Id"/>
+						</p>
 						<h2>Teacher Information</h2>
 						<table>
 							<tr>

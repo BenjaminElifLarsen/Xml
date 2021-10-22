@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Education xmlns="http://tempuri.org/Education.xsd">
+	<Schools>
+		<Name>Farmcollege</Name>
+		<Id>122</Id>
+		<Teachers>
+			<Id>1</Id>
+			<Name>Pope Celestine The Fifth</Name>
+		</Teachers>
+		<Teachers>
+			<Id>2</Id>
+			<Name>Farmer Joe</Name>
+		</Teachers>
+		<Teams>
+			<Id>1</Id>
+			<Name>Team Cow</Name>
+			<Lectures>
+				<Id>1</Id>
+			</Lectures>
+			<Student>
+				<Id>123552-2312</Id>
+				<FirstName>Cow</FirstName>
+				<LastName>Farmer</LastName>
+				<Grade>11</Grade>
+			</Student>
+		</Teams>
+		<Teams>
+			<Id>1</Id>
+			<Name>Team Chicken</Name>
+			<Lectures>
+				<Id>2</Id>
+			</Lectures>
+			<Student>
+				<Id>123552-2332</Id>
+				<FirstName>Chicken</FirstName>
+				<LastName>Farmer</LastName>
+				<Grade>10</Grade>
+			</Student>
+		</Teams>
+		<Lectures>
+			<Id>1</Id>
+			<Room>The Cow Home</Room>
+			<TeacherId>1</TeacherId>
+			<Name>Cow Tipping</Name>
+			<IsTaught>true</IsTaught>
+		</Lectures>
+		<Lectures>
+			<Id>2</Id>
+			<Room>The Farm</Room>
+			<TeacherId>2</TeacherId>
+			<Name>Chicking Sowing</Name>
+			<IsTaught>true</IsTaught>
+		</Lectures>
+	</Schools>
+</Education>

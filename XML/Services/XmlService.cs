@@ -85,55 +85,58 @@ namespace XML.Services
             }
         }
 
-        public void UpdateXML(Education toAdd, Education addToo, string saveFilePath)
+        public void UpdateXML(Education toAdd, Education addToo, string saveFilePath, bool shouldDelete = true)
         {
-            // Delete schools.
-            foreach(var delete in addToo.Schools.Where(s => !toAdd.Schools.Any(ss => s.Id == ss.Id)))
+            if (shouldDelete)
             {
-                var list = addToo.Schools.ToList();
-                list.Remove(delete);
-                addToo.Schools = list.ToArray();
-            }
-
-            // Delete data in specific schools.
-            foreach(var school in toAdd.Schools)
-            {
-                if(addToo.Schools.Any(s => s.Id == school.Id))
+                // Delete schools.
+                foreach (var delete in addToo.Schools.Where(s => !toAdd.Schools.Any(ss => s.Id == ss.Id)))
                 {
-                    var foundSchool = addToo.Schools.SingleOrDefault(s => s.Id == school.Id);
+                    var list = addToo.Schools.ToList();
+                    list.Remove(delete);
+                    addToo.Schools = list.ToArray();
+                }
 
-                    foreach(var delete in school.Lectures)
+                // Delete data in specific schools.
+                foreach (var school in toAdd.Schools)
+                {
+                    if (addToo.Schools.Any(s => s.Id == school.Id))
                     {
-                        if(!foundSchool.Lectures.Any(l => l.Id == delete.Id))
+                        var foundSchool = addToo.Schools.SingleOrDefault(s => s.Id == school.Id);
+
+                        foreach (var delete in school.Lectures)
                         {
-                            var list = foundSchool.Lectures.ToList();
-                            list.Remove(delete);
-                            foundSchool.Lectures = list.ToArray();
-                        }
-                    }
-
-                    foreach (var delete in foundSchool.Teachers.Where(s => !school.Teachers.Any(ss => s.Id == ss.Id)))
-                    {
-                        var list = foundSchool.Teachers.ToList();
-                        list.Remove(delete);
-                        foundSchool.Teachers = list.ToArray();
-                    }
-
-                    foreach (var team in school.Teams)
-                    {
-                        foreach(var delete in foundSchool.Teams.Where(s => !school.Teams.Any(ss => s.Id == ss.Id)))
-                        {
-                            var list = foundSchool.Teams.ToList();
-                            list.Remove(delete);
-                            foundSchool.Teams = list.ToArray();
+                            if (!foundSchool.Lectures.Any(l => l.Id == delete.Id))
+                            {
+                                var list = foundSchool.Lectures.ToList();
+                                list.Remove(delete);
+                                foundSchool.Lectures = list.ToArray();
+                            }
                         }
 
-                        var foundTeam = foundSchool.Teams.SingleOrDefault(t => t.Id == team.Id);
-                        foreach (var delete in foundTeam.Student.Where(s => !team.Student.Any(ss => s.Id == ss.Id)))
+                        foreach (var delete in foundSchool.Teachers.Where(s => !school.Teachers.Any(ss => s.Id == ss.Id)))
                         {
-                            var list = foundTeam.Student.ToList();
+                            var list = foundSchool.Teachers.ToList();
                             list.Remove(delete);
-                            foundTeam.Student = list.ToArray();
+                            foundSchool.Teachers = list.ToArray();
+                        }
+
+                        foreach (var team in school.Teams)
+                        {
+                            foreach (var delete in foundSchool.Teams.Where(s => !school.Teams.Any(ss => s.Id == ss.Id)))
+                            {
+                                var list = foundSchool.Teams.ToList();
+                                list.Remove(delete);
+                                foundSchool.Teams = list.ToArray();
+                            }
+
+                            var foundTeam = foundSchool.Teams.SingleOrDefault(t => t.Id == team.Id);
+                            foreach (var delete in foundTeam.Student.Where(s => !team.Student.Any(ss => s.Id == ss.Id)))
+                            {
+                                var list = foundTeam.Student.ToList();
+                                list.Remove(delete);
+                                foundTeam.Student = list.ToArray();
+                            }
                         }
                     }
                 }

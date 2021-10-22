@@ -15,6 +15,6 @@ namespace XML.Contracts
         XmlSchema GetSchema(string xsdSource);
         public void Save(Education education, string path);
         public Education Load(string sourceFilePath);
-        public void UpdateXML(Education toAdd, Education addToo, string saveFilePath);
+        public void UpdateXML(Education toAdd, Education addToo, string saveFilePath, bool shouldDelete = true);
     }
 }

@@ -92,28 +92,28 @@
 		<Name>New School</Name>
 		<Id>3</Id>
 		<Teachers>
-			<Id>111</Id>
-			<Name>Bob Bobsen</Name>
+			<Id>110</Id>
+			<Name>Bob Jrdot</Name>
 		</Teachers>
 		<Teams>
 			<Id>2</Id>
-			<Name>Best Team!!!</Name>
+			<Name>Not Best Team!!!</Name>
 			<Lectures>
-				<Id>133</Id>
+				<Id>5</Id>
 			</Lectures>
 			<Student>
 				<Id>112233-5564</Id>
 				<FirstName>Bente</FirstName>
-				<LastName>Carsten</LastName>
+				<LastName>Karsten</LastName>
 				<Grade>12</Grade>
 			</Student>
 		</Teams>
 		<Lectures>
-			<Id>133</Id>
+			<Id>5</Id>
 			<Room>B12312</Room>
-			<TeacherId>111</TeacherId>
-			<Name>Toaster Repair</Name>
-			<IsTaught>1</IsTaught>
+			<TeacherId>110</TeacherId>
+			<Name>Toaster Breaking</Name>
+			<IsTaught>0</IsTaught>
 		</Lectures>
 	</Schools>
 </Education>
